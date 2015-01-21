@@ -6,24 +6,24 @@ Anoop Sarkar
 
 # Old README
 
-Begin
-Title:          TAG parser (lem)
-Version:        0.14.0
-Entered-date:   Wed Aug 22 18:09:01 EDT 2001
-Description:    A parser written in ANSI C for parsing using the XTAG
-                English grammar.
-Keywords:       TAG XTAG NLP
-Author:         Anoop Sarkar <anoop at linc.cis.upenn.edu>
-Maintained-by:  Anoop Sarkar <anoop at linc.cis.upenn.edu>
-Home-page:      http://www.cis.upenn.edu/~xtag/
-Bugs:           Please send bugs to the tagplus mailing list
-                To join the mailing list, go to the XTAG web page:
-                http://www.cis.upenn.edu/~xtag/
-Primary-site:   ftp://ftp.cis.upenn.edu/pub/xtag/lem/
-Alternate-site:
-Platform:       Tested on SunOS 5.7 and Linux 2.2
-Copying-policy: GPL
-End             
+    Begin
+    Title:          TAG parser (lem)
+    Version:        0.14.0
+    Entered-date:   Wed Aug 22 18:09:01 EDT 2001
+    Description:    A parser written in ANSI C for parsing using the XTAG
+                    English grammar.
+    Keywords:       TAG XTAG NLP
+    Author:         Anoop Sarkar <anoop at linc.cis.upenn.edu>
+    Maintained-by:  Anoop Sarkar <anoop at linc.cis.upenn.edu>
+    Home-page:      http://www.cis.upenn.edu/~xtag/
+    Bugs:           Please send bugs to the tagplus mailing list
+                    To join the mailing list, go to the XTAG web page:
+                    http://www.cis.upenn.edu/~xtag/
+    Primary-site:   ftp://ftp.cis.upenn.edu/pub/xtag/lem/
+    Alternate-site:
+    Platform:       Tested on SunOS 5.7 and Linux 2.2
+    Copying-policy: GPL
+    End             
 
 Install instructions:
 --------------------
