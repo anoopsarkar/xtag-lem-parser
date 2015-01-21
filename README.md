@@ -74,8 +74,7 @@ command "env PWD=`pwd` make -e install". Also, check the values defined
 in the file Makefile in the current directory to see if the locations
 for various binaries matches your system configuration.
 
-
 --------------------
 Anoop Sarkar
-anoop at linc.cis.upenn.edu
+anoop at sfu.ca
 
