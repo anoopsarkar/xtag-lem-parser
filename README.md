@@ -28,38 +28,21 @@ Anoop Sarkar
 Install instructions:
 --------------------
 
-Get one of the following files from ftp://ftp.cis.upenn.edu/pub/xtag/lem/ 
+Full source code installation. You will have to compile it to run on
+your platform. The following packages are required before you can
+compile and install this package:
 
-* lem-0.14.0.i686.tgz
-      Binary version for i686 (Intel) Linux distributions.
-
-      Extract the files with the following command: 
-      % gzip -dc lem-0.14.0.i686.tgz | tar xvf -
-      % cd lem-0.14.0.i686
-      % make install
-
-* lem-0.14.0.sun4u.tgz
-      Binary version for ultrasparc machines running SunOS 5.7 or later.
-
-      Extract the files with the following command: 
-      % gzip -dc lem-0.14.0.sun4u.tgz | tar xvf -
-      % cd lem-0.14.0.sun4u
-      % make install
-
-* lem-0.14.0.tgz 
-  Full source code installation. You will have to compile it to run on
-  your platform. The following packages are required before you can
-  compile and install this package:
-      - Berkeley DB version 3.1.xx available from http://www.sleepycat.com/
-      - Perl version 5 or later
-      - egcs 1.1b or later
-      - Tcl/Tk version 4.0 or later
+- Berkeley DB version 3.1.xx available from http://www.sleepycat.com/
+- Perl version 5 or later
+- egcs 1.1b or later
+- Tcl/Tk version 4.0 or later
  
-  Extract the files with the following command: 
+Extract the files with the following command: 
+
       % gzip -dc lem-0.14.0.tgz | tar xvf -
       % cd lem-0.14.0
 
-  Read INSTALL.src for installation instructions.
+Read INSTALL.src for installation instructions.
 
 If you have problems with running "make install", use instead the
 command "env PWD=`pwd` make -e install". Also, check the values defined
