@@ -77,6 +77,7 @@ hparse_derivation_handler (hparse_t *hp, hand_t *hand, hpoutput_e output)
   return(flag);
 }
 
+#ifdef USE_PROB
 void
 hparse_add_init_prob (heap_t *heap, hand_t *hand)
 {
@@ -98,6 +99,7 @@ hparse_add_init_prob (heap_t *heap, hand_t *hand)
       }
   }
 }
+#endif
 
 int
 hparse_check_valid_start (hparse_t *hp, hand_t *hand, int start_count)
@@ -314,7 +316,7 @@ hparse_print_forest (hparse_t *hp, hand_t *hand)
     {
       int sz;
       sz = heap_sz(slist);
-      hparse_add_init_prob(slist, hand);
+      //hparse_add_init_prob(slist, hand);
       for (i = 1; i <= sz; i++)
 	{
 	  s = (hpstate_t *)heap_extract(slist);

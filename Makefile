@@ -25,9 +25,9 @@ DATE=`date`
 
 ## Needed for installation of binaries
 ## Edit the following locations to reflect your system
-WISH=/usr/local/bin/wish8.0
+# WISH=/usr/local/bin/wish8.0
 PERL=/usr/bin/perl
-# WISH=/usr/bin/wish
+WISH=/usr/bin/wish
 # PERL=/usr/local/bin/perl
 
 JAVACOMP=/pkg/j/jdk1.3/bin/javac
@@ -50,11 +50,11 @@ TAGGER=/mnt/unagi/nldb/adwait/dist/tagger/bin.SunOS/tagger \
 ## Edit the following locations to reflect your system
 ## Check that the value for CPPCOMP is g++ is from egcs-1.1b or later
 
-BERKELEY_DB=/mnt/linc/xtag/pkg/BerkeleyDB
-TAR=/usr/local/bin/gnu-tar
-CPPCOMP=/pkg/egcs-1.1b/bin/g++
-CCOMP=gcc
-PERLYACC=/mnt/linc/xtag/pkg/bin/byacc
+# BERKELEY_DB=/mnt/linc/xtag/pkg/BerkeleyDB
+TAR=/usr/bin/tar
+CPPCOMP=clang++
+CCOMP=clang
+# PERLYACC=/mnt/linc/xtag/pkg/bin/byacc
 
 ## Use the following values for a typical Linux installation.
 ## Note that the location for BERKELEY_DB is the default installation.
@@ -76,7 +76,7 @@ RMDIR=/bin/rm -rf
 install: begin-mesg install-scripts-makefiles install-scripts install-xtag-grammar end-mesg
 	@echo "install done."
 
-all: begin-mesg makefiles compile-src install-scripts compile-syntax end-mesg
+all: begin-mesg makefiles compile-src install-scripts end-mesg
 	@echo "all done."
 
 begin-mesg:
@@ -156,14 +156,14 @@ install-scripts:
 	  make install
 	cd ./src/filter; \
 	  make install
-	cd ./src/grammar; \
-	  make install
+#	cd ./src/grammar; \
+#	  make install
 	cd ./src/user; \
 	  make install
-	cd ./src/browser; \
-	  make install
-	cd ./src/server; \
-	  make install
+#	cd ./src/browser; \
+#	  make install
+#	cd ./src/server; \
+#	  make install
 	@echo "done installing files"
 
 install-xtag-grammar:

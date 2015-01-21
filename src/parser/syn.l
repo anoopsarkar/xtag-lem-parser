@@ -22,7 +22,7 @@ static char rcsid[] = "$Id: syn.l,v 1.1 2000/06/06 16:14:26 anoop Exp $";
 #include <string.h>
 
 #define yylval synlval
-#define synwrap() 1
+// #define synwrap() 1
 
 #include "common.h"
 #include "mem.h"
@@ -37,6 +37,8 @@ extern char syn_buf[];
 extern char *syn_bufptr;
 
 %}
+
+%option noyywrap
 
 token [^ \t\n<>]+
 spc   [ \t]+

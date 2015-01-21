@@ -1,7 +1,7 @@
 
 #include "nl-chkr-headers.h"
 
-void main ( int iArgs, String* psArgs[] )
+int main ( int iArgs, String* psArgs[] )
   {
   FeatTable       ftLex ;
   FeatTable       ftGram ;

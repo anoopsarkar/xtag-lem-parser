@@ -32,7 +32,8 @@ CC=@CCOMP@
 # -DUSE_PARSER_HEURISTICS = uses heuristic methods to limit parse time
 # -DALLOW_EPS_TREES = allow the use of non-lexicalized elementary trees
 
-SRC_DEFS=-DUSE_MEMCPY -DUSE_BERKELEY_DB
+SRC_DEFS=
+# -DUSE_MEMCPY -DUSE_BERKELEY_DB
 #SRC_DEFS=-DUSE_ASSERT -DUSE_BERKELEY_DB
 #SRC_DEFS=-DUSE_ASSERT -DUSE_MEMCPY -DUSE_BERKELEY_DB -DUSE_NBEST_INPUT
 #SRC_DEFS=-DUSE_ASSERT -DUSE_MEMCPY -DUSE_BERKELEY_DB -DUSE_PROB -DUSE_NBEST_INPUT -DHPARSE_USE_HEAP_EXTRACT
@@ -69,12 +70,12 @@ DEBUG=
 
 # uncomment if using Berkeley db ver 2.x
 # comment otherwise
-BERKELEY_DB_HOME=$(BERKELEY_DB)
-DBINCLUDE=-I$(BERKELEY_DB_HOME)/include
-CONTRIBOBJ=
-SYNOBJ=syn_db.o
-SYNFLAGS=-L$(BERKELEY_DB_HOME)/lib
-SYNLIBS=-ldb
+#BERKELEY_DB_HOME=$(BERKELEY_DB)
+#DBINCLUDE=-I$(BERKELEY_DB_HOME)/include
+#CONTRIBOBJ=
+#SYNOBJ=syn_db.o
+#SYNFLAGS=-L$(BERKELEY_DB_HOME)/lib
+#SYNLIBS=-ldb
 
 #DB BERKELEY_DB_HOME=$(BERKELEY_DB)
 #DB DBINCLUDE=-I$(BERKELEY_DB_HOME)/include
@@ -85,11 +86,11 @@ SYNLIBS=-ldb
 
 # Uncomment if not using Berkeley db
 # comment otherwise
-#HASH DBINCLUDE=
-#HASH CONTRIBOBJ=
-#HASH SYNOBJ=syn_hash.o
-#HASH SYNFLAGS=
-#HASH SYNLIBS=
+DBINCLUDE=
+CONTRIBOBJ=
+SYNOBJ=syn_hash.o
+SYNFLAGS=
+SYNLIBS=
 
 #CC=gcc-2.8.1
 #CC=/pkg/egcs-1.1b/bin/gcc
@@ -128,9 +129,13 @@ ia.o heap.o \
 hparse_hand.o \
 hparse_add.o hparse_utils.o hparse_state.o \
 hparse_word.o hparse_backptr.o \
-hparse.o hparse_prob.o hparse_deriv.o \
-postag.o prob_counts_db.o prob.o \
+hparse.o hparse_deriv.o \
+postag.o \
 parser.o
+
+# removed following files from OBJ which are unused if USE_PROB is not defined
+# hparse_prob.o \
+# prob_counts_db.o prob.o \
 
 # Some notes on the use of lex and yacc:
 # It is important that flex is used instead of the other 
@@ -144,7 +149,7 @@ parser.o
 
 FLEX=flex
 FLEX_FLAGS=-Psyn -t
-FLEX_LIBS=-lfl
+FLEX_LIBS=-ll
 
 YACC=yacc
 YACC_FLAGS=-d -bsyn -psyn
