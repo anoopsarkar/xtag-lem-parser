@@ -50,6 +50,6 @@ in the file Makefile in the current directory to see if the locations
 for various binaries matches your system configuration.
 
 --------------------
-Anoop Sarkar
-anoop at sfu.ca
+> Anoop Sarkar
+> anoop at sfu.ca
 
