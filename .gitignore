@@ -1,0 +1,8 @@
+*.o
+*.bin
+src/parser/syn.lex.c
+src/parser/syn.tab.c
+src/parser/syn.tab.h
+src/parser/Makefile
+src/featchecker/Makefile
+src/indent/Makefile
