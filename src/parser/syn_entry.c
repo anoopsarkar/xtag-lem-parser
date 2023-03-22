@@ -648,7 +648,7 @@ main (int argc, char **argv)
   mem_free(sentbuf);
   corpus_delete(corpus);
   gram_delete(g);
-  if (!err_be_quiet) {
+  if (!err_be_quiet()) {
     err_debug("done.\n");
   }
 

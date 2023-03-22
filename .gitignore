@@ -6,3 +6,4 @@ src/parser/syn.tab.h
 src/parser/Makefile
 src/featchecker/Makefile
 src/indent/Makefile
+data/english/english.grammar

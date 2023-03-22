@@ -23,7 +23,48 @@ Anoop Sarkar
     Alternate-site:
     Platform:       Tested on SunOS 5.7 and Linux 2.2
     Copying-policy: GPL
-    End             
+    End
+
+Update: Mar 22, 2023
+--------------------
+
+Most of the functionality cannot be restored to what it was,
+especially the use of Berkeley DB, the use of java for feature
+checking, among a few other features of the original parser.
+
+However, the parser can be compiled using `clang` after the
+recent updates. These are the steps to follow after cloning
+this repository:
+
+    make compile-src-makefiles
+    cd src/parser; make all; cd ../../
+    make install-xtag-grammar
+
+Then you can run the parser on a sample input text file as follows:
+
+    cat test/sample | src/parser/parser.bin data/english/english.grammar lib/xtag.prefs
+
+Ignore the following warnings:
+
+    Warning from synerror: error in parsing syntax db output: syntax error
+
+The output format follows the nodes in the elementary tree and shows
+the attachments using labels, e.g. the tree `alphaNXN[John]` is
+attached to the `NP_0` node of the tree `alphaW0nx0Vnx1[read]` and
+the attachment is represented using the label `0x6000061a9a90`. The
+labels are arbitrary and will change each time you run the parser
+on the same sentence. Top and bottom parts of a node in an elementary
+tree are represented separately.
+
+    begin sent="John read the book that Mary bought ."
+    start: 0x60000614b2f0 [#S_TOPFEATS]
+    0x60000614b2f0: alphaW0nx0Vnx1[read]<S_q/top><-><initroot><S_q/>[] [0x600006149f90,(nil)][0x60000615d310,0x60000614aee0]
+    0x600006149f90: alphaW0nx0Vnx1[read]<S_q/bot><-><internal><S_q/>[] [0x6000061265d0,0x600006148820]
+    0x6000061265d0: alphaW0nx0Vnx1[nil]<NP_0/top><-><internal><S_q/>[] [0x6000061a9a90,(nil)]
+    0x6000061a9a90: alphaNXN[John]<NP/top><-><initroot><NP/>[] [0x6000061b13b0,(nil)]
+    0x6000061b13b0: alphaNXN[John]<NP/bot><-><internal><NP/>[] [0x6000061ba800,(nil)]
+    0x6000061ba800: alphaNXN[John]<N/top><-><internal><NP/>[] [0x60000604c190,(nil)]
+    0x60000604c190: alphaNXN[John]<N/bot><-><internal><NP/>[<#N.m_3sg #N.m_WH- #N.m_refl- #N.m_decreas- #N.m_definite+ #N.m_GEN- #N.m_quan- >]
 
 Install instructions:
 --------------------

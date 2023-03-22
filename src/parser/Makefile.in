@@ -95,9 +95,9 @@ SYNLIBS=
 #CC=gcc-2.8.1
 #CC=/pkg/egcs-1.1b/bin/gcc
 # for linc/unagi add -L/pkg/lib to $(CFLAGS) for using egcs on unagi/linc
-GCC_FLAGS=-O -Wall -Winline -Wshadow -Wwrite-strings -Wcast-qual -Wcast-align $(DEBUG) $(SRC_DEFS)
+GCC_FLAGS=-std=gnu89 -O -Wall -Winline -Wshadow -Wwrite-strings -Wcast-qual -Wcast-align $(DEBUG) $(SRC_DEFS)
 #GCC_FLAGS=-pedantic -Wall -Wshadow -Wwrite-strings -Wcast-qual -Wcast-align $(DEBUG) $(SRC_DEFS)
-OPT_FLAGS=-O3 -fomit-frame-pointer -finline-functions -ffast-math -funroll-loops $(SRC_DEFS)
+OPT_FLAGS=-std=gnu89 -O3 -fomit-frame-pointer -finline-functions -ffast-math -funroll-loops $(SRC_DEFS)
 GDB_FLAGS=-g $(GCC_FLAGS)
 PROF_FLAGS=-g -pg $(GCC_FLAGS)
 #CFLAGS=$(GCC_FLAGS)
